@@ -3,8 +3,8 @@
 Configure DB-Replication master > slave
 
 Step by Step:     
-Deactivate os-login in InstanceA + InstanceB
- 
+Deactivate os-login in InstanceA + InstanceB  
+
 InstanceA **Master**:
 ```
 mariadb-dump -u user -pSEC --no-data --databases db1 db2 db3 | pv | ssh user@10.10.10.10 "cat > /mnt/db3-gcp-databases/InstanceA_schema.sql"
