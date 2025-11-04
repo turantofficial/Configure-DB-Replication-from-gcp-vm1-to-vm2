@@ -7,9 +7,9 @@ Deactivate os-login in InstanceA + InstanceB
  
 InstanceA **Master**:
 ```
-mariadb-dump -u tosun -pSEC --no-data --databases db1 db2 db3 | pv | ssh user@10.10.10.10 "cat > /mnt/db3-gcp-databases/InstanceA_schema.sql"
+mariadb-dump -u user -pSEC --no-data --databases db1 db2 db3 | pv | ssh user@10.10.10.10 "cat > /mnt/db3-gcp-databases/InstanceA_schema.sql"
 
-mariadb-dump -u tosun -pSEC --skip-lock-tables --single-transaction --flush-logs --master-data=2 --databases db1 db2 db3 | pv | ssh user@10.10.10.10 "cat > /mnt/db3-gcp-databases/mysqldumpInstanceA.sql"
+mariadb-dump -u user -pSEC --skip-lock-tables --single-transaction --flush-logs --master-data=2 --databases db1 db2 db3 | pv | ssh user@10.10.10.10 "cat > /mnt/db3-gcp-databases/mysqldumpInstanceA.sql"
 ```
 
 
